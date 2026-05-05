@@ -53,9 +53,9 @@ export default function BudgetPage() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 20 }}>
+      <div className="flex flex-col lg:flex-row gap-5">
         {/* Budget Controls */}
-        <div>
+        <div className="flex-1 lg:w-3/5">
           <div className="card">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
               <h2 className="text-h3">Granular Budget Controls</h2>
@@ -70,7 +70,7 @@ export default function BudgetPage() {
                 const over = b.spent > b.total;
                 return (
                   <div key={b.cat}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+                    <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mb-2">
                       <div style={{ width: 32, height: 32, borderRadius: 8, background: 'var(--color-surface-container)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <span className="material-icons" style={{ fontSize: 16, color: 'var(--color-secondary)' }}>{b.icon}</span>
                       </div>
@@ -93,7 +93,7 @@ export default function BudgetPage() {
         </div>
 
         {/* Right column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div className="flex-1 lg:w-2/5 flex flex-col gap-5">
           {/* Sensitivity Engines */}
           <div className="card">
             <h2 className="text-h3" style={{ marginBottom: 6 }}>Sensitivity Engines</h2>

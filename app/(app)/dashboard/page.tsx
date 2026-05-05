@@ -33,7 +33,7 @@ export default function DashboardPage() {
   return (
     <div style={{ maxWidth: 1200 }}>
       {/* Header */}
-      <div style={{ marginBottom: 32, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-8">
         <div>
           <h1 className="text-h1" style={{ color: 'var(--color-primary)', marginBottom: 6 }}>Overview</h1>
           <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)' }}>
@@ -53,9 +53,9 @@ export default function DashboardPage() {
       </div>
 
       {/* Top KPI Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, marginBottom: 28 }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-7">
         {/* Rewards Value */}
-        <div className="card" style={{ gridColumn: '1 / 2' }}>
+        <div className="card">
           <div className="text-label-sm" style={{ color: 'var(--color-outline)', marginBottom: 8, textTransform: 'uppercase' }}>
             Total Rewards Value
           </div>
@@ -79,7 +79,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Budget Tracking */}
-        <div className="card" style={{ gridColumn: '2 / 3' }}>
+        <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
             <div className="text-label-sm" style={{ color: 'var(--color-outline)', textTransform: 'uppercase' }}>Budget Tracking</div>
             <Link href="/budget" style={{ fontSize: 12, color: 'var(--color-tertiary)', fontWeight: 600, textDecoration: 'none' }}>View all →</Link>
@@ -110,7 +110,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Spending Insights */}
-        <div className="card" style={{ gridColumn: '3 / 4' }}>
+        <div className="card">
           <div className="text-label-sm" style={{ color: 'var(--color-outline)', textTransform: 'uppercase', marginBottom: 16 }}>
             Spending Insights
           </div>
@@ -137,9 +137,9 @@ export default function DashboardPage() {
       </div>
 
       {/* Cards Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1.2fr', gap: 20, marginBottom: 28 }}>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-7">
         {/* Cards */}
-        <div className="card">
+        <div className="card lg:col-span-2">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
             <h2 className="text-h3">Linked Cards</h2>
             <span className="chip chip-neutral">3 active</span>
@@ -211,26 +211,28 @@ export default function DashboardPage() {
           <h2 className="text-h3">Recent Transactions</h2>
           <span className="text-label-sm" style={{ color: 'var(--color-outline)' }}>Last 7 days</span>
         </div>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr>
-              {['Merchant', 'Category', 'Amount', 'Points Earned', 'Time'].map((h) => (
-                <th key={h} style={{ textAlign: 'left', padding: '0 0 12px', fontSize: 11, fontWeight: 600, color: 'var(--color-outline)', textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: '1px solid var(--color-outline-variant)' }}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {recentTx.map((tx, i) => (
-              <tr key={i} style={{ borderBottom: i < recentTx.length - 1 ? '1px solid var(--color-surface-container)' : 'none' }}>
-                <td style={{ padding: '14px 0', fontSize: 14, fontWeight: 500 }}>{tx.merchant}</td>
-                <td style={{ padding: '14px 0' }}><span className="chip chip-neutral">{tx.category}</span></td>
-                <td style={{ padding: '14px 0', fontSize: 14, fontWeight: 600, color: 'var(--color-coral)' }}>₹{tx.amount.toFixed(2)}</td>
-                <td style={{ padding: '14px 0' }}><span className="chip chip-emerald">+{tx.points} pts</span></td>
-                <td style={{ padding: '14px 0', fontSize: 12, color: 'var(--color-outline)' }}>{tx.time}</td>
+        <div className="overflow-x-auto">
+          <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
+            <thead>
+              <tr>
+                {['Merchant', 'Category', 'Amount', 'Points Earned', 'Time'].map((h) => (
+                  <th key={h} style={{ textAlign: 'left', padding: '0 0 12px', fontSize: 11, fontWeight: 600, color: 'var(--color-outline)', textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: '1px solid var(--color-outline-variant)' }}>{h}</th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {recentTx.map((tx, i) => (
+                <tr key={i} style={{ borderBottom: i < recentTx.length - 1 ? '1px solid var(--color-surface-container)' : 'none' }}>
+                  <td style={{ padding: '14px 0', fontSize: 14, fontWeight: 500 }}>{tx.merchant}</td>
+                  <td style={{ padding: '14px 0' }}><span className="chip chip-neutral">{tx.category}</span></td>
+                  <td style={{ padding: '14px 0', fontSize: 14, fontWeight: 600, color: 'var(--color-coral)' }}>₹{tx.amount.toFixed(2)}</td>
+                  <td style={{ padding: '14px 0' }}><span className="chip chip-emerald">+{tx.points} pts</span></td>
+                  <td style={{ padding: '14px 0', fontSize: 12, color: 'var(--color-outline)' }}>{tx.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

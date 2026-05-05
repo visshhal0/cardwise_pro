@@ -30,7 +30,7 @@ export default function RewardsPage() {
         <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)' }}>Optimize your points across all connected portfolios.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 28 }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-7">
         {portfolio.map((c) => (
           <div key={c.name} className="card" style={{ position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: c.accent, borderRadius: '12px 12px 0 0' }} />
@@ -62,13 +62,13 @@ export default function RewardsPage() {
         ))}
       </div>
 
-      <div className="card" style={{ marginBottom: 28, background: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="card flex flex-col md:flex-row md:items-center justify-between gap-6 mb-7" style={{ background: 'var(--color-primary)' }}>
         <div>
           <div className="text-label-sm" style={{ color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', marginBottom: 6 }}>Total Portfolio Value</div>
           <div style={{ fontSize: 36, fontWeight: 700, color: '#fff', letterSpacing: '-0.03em' }}>₹{totalValue.toLocaleString()}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginTop: 4 }}>Across all accounts</div>
         </div>
-        <div style={{ display: 'flex', gap: 24 }}>
+        <div className="flex gap-4 md:gap-6 justify-between w-full md:w-auto mt-2 md:mt-0">
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 22, fontWeight: 700, color: '#fff' }}>283,100</div>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>Total Points</div>
@@ -92,7 +92,7 @@ export default function RewardsPage() {
       {activeTab === 'opportunities' ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {opportunities.map((opp) => (
-            <div key={opp.title} className="card" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+            <div key={opp.title} className="card flex flex-col md:flex-row md:items-center gap-5">
               <div style={{ width: 52, height: 52, borderRadius: 'var(--radius-md)', background: 'var(--color-surface-container)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <span className="material-icons" style={{ fontSize: 28, color: 'var(--color-primary)' }}>{opp.icon}</span>
               </div>
@@ -103,17 +103,17 @@ export default function RewardsPage() {
                 </div>
                 <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)', maxWidth: 500 }}>{opp.description}</p>
               </div>
-              <div style={{ textAlign: 'right', flexShrink: 0 }}>
+              <div className="mt-4 md:mt-0 md:text-right shrink-0">
                 <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-emerald)', marginBottom: 2 }}>{opp.savings}</div>
                 <div className="text-label-sm" style={{ color: 'var(--color-outline)' }}>{opp.points.toLocaleString()} pts • {opp.cppValue}</div>
-                <button className="btn-primary" style={{ marginTop: 10, padding: '8px 16px', fontSize: 12 }}>Redeem Now</button>
+                <button className="btn-primary w-full md:w-auto" style={{ marginTop: 10, padding: '8px 16px', fontSize: 12 }}>Redeem Now</button>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="card">
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="card overflow-x-auto">
+          <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
             <thead>
               <tr>{['Date', 'Type', 'Program', 'Points Used', 'Value'].map((h) => (
                 <th key={h} style={{ textAlign: 'left', padding: '0 0 12px', fontSize: 11, fontWeight: 600, color: 'var(--color-outline)', textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: '1px solid var(--color-outline-variant)' }}>{h}</th>

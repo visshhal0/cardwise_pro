@@ -9,16 +9,16 @@ export default function SettingsPage() {
       {/* Profile */}
       <div className="card" style={{ marginBottom: 20 }}>
         <h2 className="text-h3" style={{ marginBottom: 20 }}>Profile</h2>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24 }}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 mb-6">
           <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: 24, flexShrink: 0 }}>V</div>
           <div>
             <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 2 }}>Enter your name</div>
             <div style={{ fontSize: 13, color: 'var(--color-outline)' }}>your.email@example.com</div>
             <span className="chip chip-emerald" style={{ marginTop: 6 }}>Premium Plan</span>
           </div>
-          <button className="btn-ghost" style={{ marginLeft: 'auto', fontSize: 13 }}>Edit Profile</button>
+          <button className="btn-ghost w-full sm:w-auto mt-2 sm:mt-0 sm:ml-auto" style={{ fontSize: 13 }}>Edit Profile</button>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[{ label: 'Full Name', value: 'Enter your name' }, { label: 'Email', value: 'your.email@example.com' }, { label: 'Phone', value: '+91 98765 43210' }, { label: 'Time Zone', value: 'Asia/Kolkata (IST)' }].map((f) => (
             <div key={f.label}>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-outline)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{f.label}</label>
@@ -30,9 +30,9 @@ export default function SettingsPage() {
 
       {/* Connected Cards */}
       <div className="card" style={{ marginBottom: 20 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
           <h2 className="text-h3">Connected Cards</h2>
-          <button className="btn-primary" style={{ fontSize: 13 }}>
+          <button className="btn-primary w-full sm:w-auto" style={{ fontSize: 13 }}>
             <span className="material-icons" style={{ fontSize: 16 }}>add</span>
             Link New Card
           </button>
@@ -42,7 +42,7 @@ export default function SettingsPage() {
           { name: 'Amex Platinum', last4: '3094', network: 'Membership Rewards', accent: '#8b5cf6', synced: '5 min ago' },
           { name: 'Citi Double Cash', last4: '7612', network: 'ThankYou Points', accent: '#10b981', synced: '12 min ago' },
         ].map((c) => (
-          <div key={c.name} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 0', borderBottom: '1px solid var(--color-surface-container)' }}>
+          <div key={c.name} className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 py-3 sm:py-4 border-b border-[var(--color-surface-container)]">
             <div style={{ width: 40, height: 40, borderRadius: 10, background: c.accent, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <span className="material-icons" style={{ color: '#fff', fontSize: 20 }}>credit_card</span>
             </div>
@@ -83,9 +83,9 @@ export default function SettingsPage() {
       <div className="card" style={{ borderLeft: '4px solid var(--color-coral)' }}>
         <h2 className="text-h3" style={{ marginBottom: 8, color: 'var(--color-coral)' }}>Danger Zone</h2>
         <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)', marginBottom: 16 }}>These actions are irreversible. Proceed with caution.</p>
-        <div style={{ display: 'flex', gap: 12 }}>
-          <button className="btn-ghost" style={{ fontSize: 13, borderColor: 'var(--color-coral)', color: 'var(--color-coral)' }}>Disconnect All Cards</button>
-          <button style={{ padding: '11px 20px', background: 'var(--color-coral)', color: '#fff', border: 'none', borderRadius: 'var(--radius)', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>Delete Account</button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button className="btn-ghost w-full sm:w-auto" style={{ fontSize: 13, borderColor: 'var(--color-coral)', color: 'var(--color-coral)' }}>Disconnect All Cards</button>
+          <button className="w-full sm:w-auto" style={{ padding: '11px 20px', background: 'var(--color-coral)', color: '#fff', border: 'none', borderRadius: 'var(--radius)', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>Delete Account</button>
         </div>
       </div>
     </div>

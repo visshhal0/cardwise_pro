@@ -233,3 +233,66 @@ html, body {
   height: 48px;
   overflow: hidden;
 }
+
+/* ═══════════════════════════════════════════ */
+/* RESPONSIVE — MOBILE FIRST                  */
+/* ═══════════════════════════════════════════ */
+
+/* Tablet & below (≤ 768px) */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+  }
+
+  .text-h1 { font-size: 26px; }
+  .text-h2 { font-size: 20px; }
+  .text-h3 { font-size: 17px; }
+  .text-data { font-size: 22px; }
+
+  .card { padding: 16px; }
+
+  .btn-primary { padding: 12px 18px; font-size: 13px; width: 100%; }
+  .btn-ghost { padding: 11px 16px; font-size: 13px; }
+
+  /* Sidebar → bottom navigation */
+  .desktop-sidebar {
+    display: none !important;
+  }
+
+  .mobile-bottom-nav {
+    display: flex !important;
+  }
+
+  .app-main {
+    margin-left: 0 !important;
+    max-width: 100vw !important;
+    padding: 20px 16px 90px !important;
+  }
+
+  /* Alert banners stack */
+  .alert-banner {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}
+
+/* Small mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .text-h1 { font-size: 22px; }
+  .text-data { font-size: 20px; }
+  .card { padding: 14px; border-radius: var(--radius-md); }
+}
+
+/* Hide mobile nav on desktop */
+.mobile-bottom-nav {
+  display: none !important;
+}
+
+@media (min-width: 769px) {
+  .desktop-sidebar {
+    display: flex !important;
+  }
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
