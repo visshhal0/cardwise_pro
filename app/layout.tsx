@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'CardWise Pro — Smart Financial Rewards Hub',
+  title: 'Card Notify — Smart Financial Rewards Hub',
   description:
     'Maximize every point. Connect your credit cards, track spending, optimize rewards, and get smart budget alerts — all in one premium financial dashboard.',
 };

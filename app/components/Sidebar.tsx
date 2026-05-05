@@ -51,7 +51,7 @@ export default function Sidebar() {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-primary)', lineHeight: 1.2 }}>
-              CardWise Pro
+              Card Notify
             </div>
             <div className="text-label-sm" style={{ color: 'var(--color-outline)' }}>
               Wealth Management

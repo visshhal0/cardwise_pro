@@ -35,7 +35,7 @@ export default function ConnectPage() {
               <div style={{ width: 32, height: 32, background: 'var(--color-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span className="material-icons" style={{ color: '#fff', fontSize: 16 }}>credit_card</span>
               </div>
-              <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-primary)' }}>CardWise Pro</span>
+              <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-primary)' }}>Card Notify</span>
             </div>
             <span className="chip chip-neutral">Step 3 of 4</span>
           </div>
@@ -121,7 +121,7 @@ export default function ConnectPage() {
               {agreed && <span className="material-icons" style={{ fontSize: 14, color: '#fff' }}>check</span>}
             </div>
             <span style={{ fontSize: 13, color: 'var(--color-on-surface-variant)', lineHeight: 1.5 }}>
-              I authorise CardWise Pro to retrieve my account data in read-only mode under the{' '}
+              I authorise Card Notify to retrieve my account data in read-only mode under the{' '}
               <span style={{ color: 'var(--color-primary)', fontWeight: 600, cursor: 'pointer' }}>Data Access Agreement</span>.
             </span>
           </label>

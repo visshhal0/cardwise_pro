@@ -17,7 +17,7 @@ export default function OnboardingWelcomePage() {
               <span className="material-icons" style={{ color: '#fff', fontSize: 20 }}>credit_card</span>
             </div>
             <div>
-              <div style={{ fontWeight: 700, fontSize: 15, color: '#fff', lineHeight: 1.2 }}>CardWise Pro</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: '#fff', lineHeight: 1.2 }}>Card Notify</div>
               <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.04em' }}>WEALTH MANAGEMENT</div>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function OnboardingWelcomePage() {
             </div>
           </div>
           <div style={{ marginTop: 48, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
-            © 2024 CardWise Pro. All rights reserved.
+            © 2024 Card Notify. All rights reserved.
           </div>
         </div>
 

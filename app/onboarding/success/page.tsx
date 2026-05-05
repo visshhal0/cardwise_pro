@@ -37,7 +37,7 @@ export default function SuccessPage() {
               <div style={{ width: 32, height: 32, background: 'var(--color-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span className="material-icons" style={{ color: '#fff', fontSize: 16 }}>credit_card</span>
               </div>
-              <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-primary)' }}>CardWise Pro</span>
+              <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--color-primary)' }}>Card Notify</span>
             </div>
             <span className="chip chip-emerald">Step 4 of 4</span>
           </div>
