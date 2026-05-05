@@ -1,0 +1,6 @@
+# Secure Connection - CardWise Pro
+
+
+# Connect Chase Ultimate Rewards
+Enter your credentials below to establish a secure, read-only connection.
+Your connection is secured with bank-grade 256-bit encryption. Your credentials are never stored on our servers and data privacy is guaranteed.
