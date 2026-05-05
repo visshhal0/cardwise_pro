@@ -39,9 +39,9 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Monthly Summary */}
-      <div className="flex flex-col lg:flex-row gap-5 mb-5">
-        <div className="card lg:w-2/3">
-          <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20, marginBottom: 20 }}>
+        <div className="card">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
             <div>
               <h2 className="text-h3" style={{ marginBottom: 4 }}>Monthly Summary</h2>
               <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)', maxWidth: 420 }}>
@@ -49,7 +49,7 @@ export default function AnalyticsPage() {
                 Subscription costs dropped by 4%.
               </p>
             </div>
-            <div className="w-full sm:w-auto text-left sm:text-right shrink-0">
+            <div style={{ textAlign: 'right', flexShrink: 0 }}>
               <div className="text-label-sm" style={{ color: 'var(--color-outline)', textTransform: 'uppercase', marginBottom: 4 }}>Total Spent</div>
               <div className="text-data" style={{ color: 'var(--color-primary)' }}>₹4,250.00</div>
               <div className="chip chip-coral" style={{ marginTop: 6 }}>
@@ -70,7 +70,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Spending Breakdown donut-style */}
-        <div className="card lg:w-1/3">
+        <div className="card">
           <h2 className="text-h3" style={{ marginBottom: 20 }}>Breakdown</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {categories.map((c) => (
@@ -91,7 +91,7 @@ export default function AnalyticsPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
         {/* Impulse Patterns */}
         <div className="card">
           <h2 className="text-h3" style={{ marginBottom: 4 }}>Impulse Patterns</h2>
@@ -157,15 +157,15 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Pacing & Projections */}
-        <div className="card md:col-span-2">
-          <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-4 mb-5">
+        <div className="card" style={{ gridColumn: '1 / -1' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
             <div>
               <h2 className="text-h3" style={{ marginBottom: 4 }}>Pacing &amp; Projections</h2>
               <p className="text-body-md" style={{ color: 'var(--color-on-surface-variant)' }}>At your current pace, you&apos;ll spend ~$5,100 by month end.</p>
             </div>
-            <div className="flex flex-wrap sm:flex-nowrap gap-3 w-full lg:w-auto">
+            <div style={{ display: 'flex', gap: 12 }}>
               {[{ label: 'Projected', value: '₹5,100', type: 'coral' }, { label: 'Budget', value: '₹4,500', type: 'neutral' }, { label: 'Saved so far', value: '₹248', type: 'emerald' }].map((stat) => (
-                <div key={stat.label} className="flex-1 sm:flex-none text-center p-3 rounded-lg bg-[var(--color-surface-low)]">
+                <div key={stat.label} style={{ textAlign: 'center', padding: '12px 20px', background: 'var(--color-surface-low)', borderRadius: 'var(--radius)' }}>
                   <div style={{ fontSize: 18, fontWeight: 700, color: stat.type === 'coral' ? 'var(--color-coral)' : stat.type === 'emerald' ? 'var(--color-emerald)' : 'var(--color-on-bg)' }}>{stat.value}</div>
                   <div className="text-label-sm" style={{ color: 'var(--color-outline)', marginTop: 2 }}>{stat.label}</div>
                 </div>

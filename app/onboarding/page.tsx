@@ -8,10 +8,10 @@ const features = [
 
 export default function OnboardingWelcomePage() {
   return (
-    <div className="flex min-h-screen bg-[var(--color-bg)] items-center justify-center p-4 md:p-6">
-      <div className="w-full max-w-[960px] grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[20px] overflow-hidden shadow-[var(--shadow-popover)]">
+    <div style={{ minHeight: '100vh', background: 'var(--color-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+      <div style={{ width: '100%', maxWidth: 960, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: 20, overflow: 'hidden', boxShadow: 'var(--shadow-popover)' }}>
         {/* Left — dark panel */}
-        <div className="bg-[var(--color-primary)] p-8 md:p-14 flex flex-col justify-between hidden md:flex">
+        <div style={{ background: 'var(--color-primary)', padding: 56, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 48 }}>
             <div style={{ width: 36, height: 36, background: 'rgba(255,255,255,0.12)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <span className="material-icons" style={{ color: '#fff', fontSize: 20 }}>credit_card</span>
@@ -48,7 +48,7 @@ export default function OnboardingWelcomePage() {
         </div>
 
         {/* Right — form panel */}
-        <div className="bg-white p-6 md:p-14 flex flex-col justify-center">
+        <div style={{ background: '#fff', padding: 56, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={{ marginBottom: 40 }}>
             <div className="chip chip-emerald" style={{ marginBottom: 16 }}>Step 1 of 4</div>
             <h2 className="text-h2" style={{ marginBottom: 8 }}>Welcome aboard</h2>

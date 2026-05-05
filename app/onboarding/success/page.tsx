@@ -28,8 +28,8 @@ export default function SuccessPage() {
   const done = progress >= 100;
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-bg)] items-center justify-center p-4 md:p-6">
-      <div className="w-full max-w-[500px]">
+    <div style={{ minHeight: '100vh', background: 'var(--color-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+      <div style={{ width: '100%', maxWidth: 500 }}>
         {/* Progress bar */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>

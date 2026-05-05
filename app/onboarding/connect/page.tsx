@@ -26,8 +26,8 @@ export default function ConnectPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-bg)] items-center justify-center p-4 md:p-6">
-      <div className="w-full max-w-[540px]">
+    <div style={{ minHeight: '100vh', background: 'var(--color-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+      <div style={{ width: '100%', maxWidth: 540 }}>
         {/* Progress */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
@@ -126,15 +126,15 @@ export default function ConnectPage() {
             </span>
           </label>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/onboarding/provider" className="btn-ghost w-full sm:w-auto flex-1 flex justify-center">
+          <div style={{ display: 'flex', gap: 12 }}>
+            <Link href="/onboarding/provider" className="btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>
               <span className="material-icons" style={{ fontSize: 16 }}>arrow_back</span>Back
             </Link>
             <button
               onClick={handleConnect}
               disabled={!agreed || loading}
-              className="btn-primary w-full sm:w-auto flex-2 flex justify-center"
-              style={{ opacity: agreed && !loading ? 1 : 0.45, cursor: agreed && !loading ? 'pointer' : 'not-allowed', border: 'none', outline: 'none' }}
+              className="btn-primary"
+              style={{ flex: 2, justifyContent: 'center', opacity: agreed && !loading ? 1 : 0.45, cursor: agreed && !loading ? 'pointer' : 'not-allowed', border: 'none', outline: 'none' }}
             >
               <span className="material-icons" style={{ fontSize: 18 }}>{loading ? 'hourglass_empty' : 'lock'}</span>
               {loading ? 'Connecting...' : 'Connect Securely'}
